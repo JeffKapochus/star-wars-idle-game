@@ -27,25 +27,26 @@ export class ItemButton extends React.Component {
   handleButtonPress(){
     this.props.handleClickCallback(this.state.cost, this.state.value);
     var newVal = this.state.value;
+    var newOwned = this.state.owned + 1;
     if(this.state.owned % 25 === 24){
       newVal = this.state.value * 2;
     }
-    this.setState({cost: (this.state.cost * 1.5 + 1).toFixed(0), owned: this.state.owned + 1, value: newVal});
+    this.setState({cost: (this.props.cost * Math.pow(1.07, newOwned)).toFixed(0), owned: newOwned, value: newVal});
   }
 
   render() {
     return (
       <button
           type="primary"
-          className="ActionStepButton"
+          className="itemButton"
           onClick={this.handleButtonPress}
           disabled={this.checkDisabled()}
       >
-        {this.props.buttonLabel}<br/>
-        Value: {this.state.value}<br />
+        <strong>{this.props.buttonLabel}</strong><br/>
+        <small>Value: {this.state.value}<br />
         Cost: {this.state.cost}<br />
         Owned: {this.state.owned}<br />
-        Credits Per Second: {this.state.value * this.state.owned}<br />
+        Credits Per Second: {this.state.value * this.state.owned}</small>
       </button>
     );
   }
