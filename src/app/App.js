@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Star Wars Idle Game</h1>
+        <h1 class="siteTitle">Star Wars Idle Game</h1>
       </header>
       <div className="App-body">
         <GameScreen />

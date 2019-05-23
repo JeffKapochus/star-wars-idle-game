@@ -3,7 +3,7 @@
 }
 .App-header {
   background-color: white;
-  height:8vh;
+  max-height:8vh;
 }
 .App-body {
   background-color: #282c34;
@@ -18,4 +18,12 @@
 .App-footer {
   background-color: white;
   height:5vh;
+}
+.siteTitle{
+  font-size:5vw;
+}
+@media screen and (min-width: 550px) {
+  .siteTitle {
+     font-size: 28px;
+  }
 }
