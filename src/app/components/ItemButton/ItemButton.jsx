@@ -5,7 +5,8 @@ export class ItemButton extends React.Component {
     this.state = {
       cost: 0,
       value: 0,
-      owned: 0
+      owned: 0,
+      perSecond: 0
     }
     this.handleButtonPress = this.handleButtonPress.bind(this);
     this.checkDisabled = this.checkDisabled.bind(this);
@@ -25,13 +26,16 @@ export class ItemButton extends React.Component {
   }
 
   handleButtonPress(){
-    this.props.handleClickCallback(this.state.cost, this.state.value);
     var newVal = this.state.value;
-    var newOwned = this.state.owned + 1;
     if(this.state.owned % 25 === 24){
       newVal = this.state.value * 2;
+      this.props.handleClickCallback(this.state.cost, (newVal + (this.state.value * this.state.owned)));
     }
-    this.setState({cost: (this.props.cost * Math.pow(1.07, newOwned)).toFixed(0), owned: newOwned, value: newVal});
+    else{
+      this.props.handleClickCallback(this.state.cost, this.state.value);
+    }
+    var newOwned = this.state.owned + 1;
+    this.setState({cost: (this.props.cost * Math.pow(1.07, newOwned)).toFixed(0), owned: newOwned, value: newVal, perSecond: newVal * newOwned});
   }
 
   render() {
@@ -46,7 +50,7 @@ export class ItemButton extends React.Component {
         <small>Value: {this.state.value}<br />
         Cost: {this.state.cost}<br />
         Owned: {this.state.owned}<br />
-        Credits Per Second: {this.state.value * this.state.owned}</small>
+        Credits Per Second: {this.state.perSecond}</small>
       </button>
     );
   }

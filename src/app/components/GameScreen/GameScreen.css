@@ -2,9 +2,11 @@
     margin: 1% 0 3%;
 }
 .button-div{
+    overflow-y: scroll;
     display:inline-block;
     margin: 0 2%;
     width:55%;
+    height:67vh;
 }
 .itemButton{
     min-width:32%;

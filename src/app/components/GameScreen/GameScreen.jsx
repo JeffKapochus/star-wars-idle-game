@@ -9,7 +9,8 @@ export class GameScreen extends React.Component {
     super(props);
     this.state = {
         credits: 15,
-        toAdd: 0
+        toAdd: 0,
+        totalCredits:15
     };
     this.buttonPressCallback = this.buttonPressCallback.bind(this);
   }
@@ -17,7 +18,8 @@ export class GameScreen extends React.Component {
     this.credits = setInterval(
       () =>
         this.setState({
-          credits: this.state.credits + (this.state.toAdd)
+          credits: this.state.credits + (this.state.toAdd),
+          totalCredits: this.state.totalCredits + (this.state.toAdd)
         }),
       1000
     );
@@ -32,12 +34,12 @@ export class GameScreen extends React.Component {
   }
   render() {
     return (
-      <div class="gamescreen">
-        <div class="score-div">
+      <div className="gamescreen">
+        <div className="score-div">
           <ScoreDisplay className="creditDiv" displayLabel="Galactic Credits" credits={this.state.credits}/>
           <ScoreDisplay className="creditPerSecondDiv" displayLabel="Credits Per Second" credits={this.state.toAdd}/>
         </div>
-        <div class="button-div">
+        <div className="button-div">
           <ItemButton buttonLabel="Astromech Droid" cost={15} value={1} handleClickCallback={this.buttonPressCallback} credits={this.state.credits}/>
           <ItemButton buttonLabel="Protocol Droid" cost={100} value={5} handleClickCallback={this.buttonPressCallback} credits={this.state.credits}/>
           <ItemButton buttonLabel="Rebel Trooper" cost={500} value={10} handleClickCallback={this.buttonPressCallback} credits={this.state.credits}/>
@@ -51,8 +53,10 @@ export class GameScreen extends React.Component {
           <ItemButton buttonLabel="Chancellor" cost={100000} value={5000} handleClickCallback={this.buttonPressCallback} credits={this.state.credits}/>
           <ItemButton buttonLabel="Jedi" cost={150000} value={10000} handleClickCallback={this.buttonPressCallback} credits={this.state.credits}/>
         </div>
-        <div class="display-div">
-          <img src=""/>
+        <div className="display-div">
+        </div>
+        <div className="stats-div">
+          Total Credits Earned: {this.state.totalCredits}
         </div>
       </div>
     );
