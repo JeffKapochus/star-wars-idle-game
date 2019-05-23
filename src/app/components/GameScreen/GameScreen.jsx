@@ -54,6 +54,7 @@ export class GameScreen extends React.Component {
           <ItemButton buttonLabel="Jedi" cost={150000} value={10000} handleClickCallback={this.buttonPressCallback} credits={this.state.credits}/>
         </div>
         <div className="display-div">
+          <div className="battle-div"><img src="/images/desert.png" alt="Battlefield" className="battlefield-img"/></div>
         </div>
         <div className="stats-div">
           Total Credits Earned: {this.state.totalCredits}
