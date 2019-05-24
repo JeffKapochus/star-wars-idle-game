@@ -1,0 +1,10 @@
+.battle-div {
+  display: table-cell;
+  vertical-align: middle;
+}
+.battlefield-img {
+  vertical-align: middle;
+  width: 100%;
+  max-height: 300px;
+  max-width: 686.31px;
+}
