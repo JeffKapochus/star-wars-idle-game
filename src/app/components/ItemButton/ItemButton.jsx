@@ -1,4 +1,6 @@
-const React = require("react");
+import React from 'react';
+import './ItemButton.css';
+
 export class ItemButton extends React.Component {
   constructor(props) {
     super(props);

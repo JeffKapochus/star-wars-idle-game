@@ -1,8 +1,7 @@
+import React from 'react';
 import './GameScreen.css';
 import {ScoreDisplay} from "../ScoreDisplay/ScoreDisplay";
 import {ItemButton} from "../ItemButton/ItemButton";
-
-const React = require("react");
 
 export class GameScreen extends React.Component {
   constructor(props) {

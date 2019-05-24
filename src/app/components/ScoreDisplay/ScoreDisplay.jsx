@@ -1,4 +1,6 @@
-const React = require("react");
+import React from 'react';
+import './ScoreDisplay.css';
+
 export class ScoreDisplay extends React.Component {
   render() {
     return (

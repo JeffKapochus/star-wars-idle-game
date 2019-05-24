@@ -30,54 +30,6 @@
 .button-div::-webkit-scrollbar-thumb:hover {
     background: #00FFFF; 
 }
-.itemButton{
-    width:48%;
-    background-color: rgba(0,0,0,0);
-    border: 0.1em solid #14b7b8;
-    border-radius:15px;
-    color: #14b7b8;
-    padding: 1em 1.5em;
-    margin:0.2em;
-    text-align: center;
-    font-size: 1.2vw;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-}
-.itemButton:disabled {
-    opacity: 0.4;
-    color:gray;
-    border: 0.1em solid gray;
-    cursor: not-allowed;
-    box-shadow: none;
-}
-.itemButton:hover{
-    border: 0.1em solid #00FFFF;
-    color:#00FFFF;
-    box-shadow: 0px 0px .3em #00FFFF;
-}
-.itemButton:focus{
-    outline:none;
-}
-.itemButton:active{
-    outline:none;
-    border: 0.1em solid #a7ffff;
-    color:#a7ffff;
-    box-shadow: 0px 0px .3em #a7ffff;
-    -webkit-transition-duration: 0.1s; /* Safari */
-    transition-duration: 0.1s;
-}
-.itemButton:disabled:hover {
-    background-color: rgba(0,0,0,0);
-    border: 0.1em solid gray;
-    color:gray;
-    box-shadow: none;
-}
-.itemButton:first-child{
-    margin-top:1em;
-}
-.itemButton:last-child{
-    margin-bottom:1em;
-}
 .display-div{
     display:table;
     float:left;
