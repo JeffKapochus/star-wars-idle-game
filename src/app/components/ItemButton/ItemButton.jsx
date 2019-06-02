@@ -1,6 +1,6 @@
 import React from "react";
 import "./ItemButton.css";
-import NumberFormat from "react-number-format";
+import { NumberFormat } from "../NumberFormat/NumberFormat";
 
 export class ItemButton extends React.Component {
   constructor(props) {
@@ -78,29 +78,21 @@ export class ItemButton extends React.Component {
           Value:{" "}
           <NumberFormat
             value={this.state.value}
-            displayType={"text"}
-            thousandSeparator={true}
           />
           <br />
           Cost:{" "}
           <NumberFormat
             value={this.state.cost}
-            displayType={"text"}
-            thousandSeparator={true}
           />
           <br />
           Owned:{" "}
           <NumberFormat
             value={this.state.owned}
-            displayType={"text"}
-            thousandSeparator={true}
           />
           <br />
           Credits Per Second:{" "}
           <NumberFormat
             value={this.state.perSecond}
-            displayType={"text"}
-            thousandSeparator={true}
           />
         </small>
       </button>

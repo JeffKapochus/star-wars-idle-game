@@ -7,6 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1 className="siteTitle">Star Wars Idle Game</h1>
+        <p><a href="../">Back to This Guy Writes Code</a></p>
       </header>
       <div className="App-body">
         <GameScreen />

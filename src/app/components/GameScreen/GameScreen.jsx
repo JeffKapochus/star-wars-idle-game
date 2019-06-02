@@ -5,7 +5,7 @@ import "antd/dist/antd.css";
 import { Battlefield } from "../Battlefield/Battlefield";
 import { ItemButton } from "../ItemButton/ItemButton";
 import { ScoreDisplay } from "../ScoreDisplay/ScoreDisplay";
-import NumberFormat from "react-number-format";
+import { NumberFormat } from "../NumberFormat/NumberFormat";
 const TabPane = Tabs.TabPane;
 
 export class GameScreen extends React.Component {
