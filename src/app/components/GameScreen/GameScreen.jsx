@@ -27,8 +27,8 @@ export class GameScreen extends React.Component {
         this.setState({
           credits: this.state.credits + this.state.toAdd,
           totalCredits: this.state.totalCredits + this.state.toAdd,
-          timePlayed: this.state.timePlayed + 1,
-          averageEarned: this.state.totalCredits / this.state.timePlayed
+          averageEarned: this.state.totalCredits / (this.state.timePlayed + 1),
+          timePlayed: this.state.timePlayed + 1
         }),
       1000
     );
@@ -154,34 +154,16 @@ export class GameScreen extends React.Component {
           <TabPane tab="Stats" key="1">
             <div className="stats-div">
               Total Credits Earned:{" "}
-              <NumberFormat
-                value={this.state.totalCredits}
-                displayType={"text"}
-                thousandSeparator={true}
-              />
+              <NumberFormat value={this.state.totalCredits} />
               <br />
               Total Credits Spent:{" "}
-              <NumberFormat
-                value={this.state.creditsSpent}
-                displayType={"text"}
-                thousandSeparator={true}
-              />
+              <NumberFormat value={this.state.creditsSpent} />
               <br />
               Total Time Played:{" "}
-              <NumberFormat
-                value={this.state.timePlayed}
-                displayType={"text"}
-                thousandSeparator={true}
-              />
+              <NumberFormat value={this.state.timePlayed} />
               <br />
               Average Credits Earned Per Second:{" "}
-              <NumberFormat
-                value={this.state.averageEarned}
-                displayType={"text"}
-                thousandSeparator={true}
-                decimalScale={2}
-                fixedDecimalScale={true}
-              />
+              <NumberFormat value={this.state.averageEarned} />
             </div>
           </TabPane>
         </Tabs>

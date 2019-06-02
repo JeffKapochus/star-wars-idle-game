@@ -12,7 +12,7 @@ function App() {
       <div className="App-body">
         <GameScreen />
       </div>
-      <footer className="App-footer">© Jeff Kapochus 2019</footer>
+      <footer className="App-footer">© Jeff Kapochus 2019-{new Date().getFullYear()}</footer>
     </div>
   );
 }

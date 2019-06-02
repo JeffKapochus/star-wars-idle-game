@@ -76,24 +76,16 @@ export class ItemButton extends React.Component {
         <br />
         <small>
           Value:{" "}
-          <NumberFormat
-            value={this.state.value}
-          />
+          <NumberFormat value={this.state.value} />
           <br />
           Cost:{" "}
-          <NumberFormat
-            value={this.state.cost}
-          />
+          <NumberFormat value={this.state.cost} />
           <br />
           Owned:{" "}
-          <NumberFormat
-            value={this.state.owned}
-          />
+          <NumberFormat value={this.state.owned} />
           <br />
           Credits Per Second:{" "}
-          <NumberFormat
-            value={this.state.perSecond}
-          />
+          <NumberFormat value={this.state.perSecond} />
         </small>
       </button>
     );

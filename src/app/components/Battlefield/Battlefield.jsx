@@ -12,7 +12,7 @@ export class Battlefield extends React.Component {
     return (
       <div className="battle-div">
         <img
-          src="/images/desert.png"
+          src="images/desert.png"
           alt="Battlefield"
           className="battlefield-img"
         />

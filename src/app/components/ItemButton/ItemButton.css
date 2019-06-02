@@ -53,6 +53,11 @@
   margin-top: 1em;
   display: inline-block;
 }
+@media screen and (max-width: 1000px) {
+  .itemButton{
+    font-size:1.9vw;
+  }
+}
 @media screen and (min-width: 1920px) {
   .itemButton {
      font-size: 23px;
