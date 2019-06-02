@@ -7,9 +7,12 @@
   padding: 1em 1.5em;
   margin: 0.2em;
   text-align: center;
+  line-height:1em;
   font-size: 1.2vw;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
+  max-height:220px;
+  max-width:273px;
 }
 .itemButton:disabled {
   opacity: 0.4;
@@ -49,4 +52,9 @@
 .itemButton:first-child {
   margin-top: 1em;
   display: inline-block;
+}
+@media screen and (min-width: 1920px) {
+  .itemButton {
+     font-size: 23px;
+  }
 }

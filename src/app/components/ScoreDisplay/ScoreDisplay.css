@@ -8,3 +8,11 @@
     margin:0;
     font-size: 1.5vw;
 }
+@media screen and (min-width: 1919px) {
+    .creditDiv > p {
+        font-size:36px;
+    }
+    .creditPerSecondDiv > p{
+        font-size: 30px;
+    }
+  }
