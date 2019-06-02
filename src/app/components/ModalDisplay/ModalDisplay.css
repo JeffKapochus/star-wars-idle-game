@@ -1,0 +1,66 @@
+#modalBlocker{
+    z-index:900;
+    position:absolute;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+.totalBlock{
+    height:84vh;
+    width:100%;
+    background-color: rgba(43, 43, 43, 0.8);
+}
+#closeButton{
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+    cursor:default;
+    display:inline;
+    background-color:black;
+    border: 0.08em solid white;
+    color:white;
+    border-radius:15px;
+    padding:0.3em 0.6em 0.4em 0.6em;
+    margin:0.5em;
+    float:right;
+}
+#closeButton:hover{
+    box-shadow: 0px 0px 0.3em white;
+}
+#dialogueDisplay{
+    z-index:999;
+    font-size:1vw;
+    width:35vw;
+    min-width:300px;
+    max-width:650px;
+    min-height:150px;
+    max-height:280px;
+    margin:auto;
+    background-color:rgb(37, 37, 37);
+    margin-top:20vh;
+    border: 0.1em solid white;
+    border-radius:20px;
+    box-shadow: 0px 0px 0.3em white;
+}
+#dialogueDisplay > p {
+    padding:1.3em;
+}
+.hidden{
+    display:none;
+}
+@media screen and (max-width: 1000px){
+    #dialogueDisplay > p {
+        font-size: 10px;
+     }
+}
+@media screen and (min-width: 1920px) {
+    #dialogueDisplay > p {
+       font-size: 19px;
+    }
+    #closeButton {
+        font-size:19px;
+    }
+  }

@@ -2,6 +2,7 @@ import React from "react";
 import "./GameScreen.css";
 import { Tabs } from "antd";
 import "antd/dist/antd.css";
+import { ModalDisplay } from "../ModalDisplay/ModalDisplay";
 import { Battlefield } from "../Battlefield/Battlefield";
 import { ItemButton } from "../ItemButton/ItemButton";
 import { ScoreDisplay } from "../ScoreDisplay/ScoreDisplay";
@@ -9,6 +10,12 @@ import { NumberFormat } from "../NumberFormat/NumberFormat";
 const TabPane = Tabs.TabPane;
 
 export class GameScreen extends React.Component {
+  instructions = ["This game is meant to be an exercise in the React skills I picked up at a previous job. " +
+  "The object of this game is to purchase supplies for the Rebel army so that they might win the war " + 
+  "against the Galactic Empire. Start by clicking on the 'Astromech Droid' button once to purchase an " + 
+  "Astromech Droid. The droid will then begin earning credits for you each second. You can use those " + 
+  "credits to purchase more droids to earn more credits. Much of this project remains indefinitely unfinished."];
+
   constructor(props) {
     super(props);
     this.state = {
@@ -17,9 +24,12 @@ export class GameScreen extends React.Component {
       totalCredits: 15,
       creditsSpent: 0,
       timePlayed: 0,
-      averageEarned: 0
+      averageEarned: 0,
+      hideModal: false,
+      currentInstruction: 0
     };
     this.buttonPressCallback = this.buttonPressCallback.bind(this);
+    this.closeModalCallback = this.closeModalCallback.bind(this);
   }
   componentDidMount() {
     this.credits = setInterval(
@@ -44,9 +54,15 @@ export class GameScreen extends React.Component {
       creditsSpent: newTotalSpent
     });
   }
+  closeModalCallback(){
+    this.setState({
+      hideModal:true
+    });
+  }
   render() {
     return (
       <div className="gamescreen">
+        <ModalDisplay block={true} hide={this.state.hideModal} closeModal={this.closeModalCallback} text={this.instructions[this.state.currentInstruction]}/>
         <Tabs defaultActiveKey="0">
           <TabPane tab="Game" key="0">
             <div className="score-div">

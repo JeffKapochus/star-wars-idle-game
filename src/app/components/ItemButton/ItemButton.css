@@ -12,7 +12,7 @@
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   max-height:220px;
-  max-width:273px;
+  max-width:300px;
 }
 .itemButton:disabled {
   opacity: 0.4;
