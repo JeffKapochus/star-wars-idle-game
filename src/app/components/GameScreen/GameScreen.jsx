@@ -10,11 +10,13 @@ import { NumberFormat } from "../NumberFormat/NumberFormat";
 const TabPane = Tabs.TabPane;
 
 export class GameScreen extends React.Component {
-  instructions = ["This game is meant to be an exercise in the React skills I picked up at a previous job. " +
-  "The object of this game is to purchase supplies for the Rebel army so that they might win the war " + 
-  "against the Galactic Empire. Start by clicking on the 'Astromech Droid' button once to purchase an " + 
-  "Astromech Droid. The droid will then begin earning credits for you each second. You can use those " + 
-  "credits to purchase more droids to earn more credits. Much of this project remains indefinitely unfinished."];
+  instructions = [
+    "This game is meant to be an exercise in the React skills I picked up at a previous job. " +
+      "The object of this game is to purchase supplies for the Rebel army so that they might win the war " +
+      "against the Galactic Empire. Start by clicking on the 'Astromech Droid' button once to purchase an " +
+      "Astromech Droid. The droid will then begin earning credits for you each second. You can use those " +
+      "credits to purchase more droids to earn more credits. Much of this project remains indefinitely unfinished."
+  ];
 
   constructor(props) {
     super(props);
@@ -54,15 +56,20 @@ export class GameScreen extends React.Component {
       creditsSpent: newTotalSpent
     });
   }
-  closeModalCallback(){
+  closeModalCallback() {
     this.setState({
-      hideModal:true
+      hideModal: true
     });
   }
   render() {
     return (
-      <div className="gamescreen">
-        <ModalDisplay block={true} hide={this.state.hideModal} closeModal={this.closeModalCallback} text={this.instructions[this.state.currentInstruction]}/>
+      <div id="gamescreen">
+        <ModalDisplay
+          block={true}
+          hide={this.state.hideModal}
+          closeModal={this.closeModalCallback}
+          text={this.instructions[this.state.currentInstruction]}
+        />
         <Tabs defaultActiveKey="0">
           <TabPane tab="Game" key="0">
             <div className="score-div">
@@ -175,8 +182,7 @@ export class GameScreen extends React.Component {
               Total Credits Spent:{" "}
               <NumberFormat value={this.state.creditsSpent} />
               <br />
-              Total Time Played:{" "}
-              <NumberFormat value={this.state.timePlayed} />
+              Total Time Played: <NumberFormat value={this.state.timePlayed} />
               <br />
               Average Credits Earned Per Second:{" "}
               <NumberFormat value={this.state.averageEarned} />
